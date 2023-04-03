@@ -8,5 +8,20 @@
 </head>
 <body>
     <h1>SUP DJANGO, PLZ DO A WORK THING</h1>
+    <table>
+        {% for item in items %}
+        <tr>
+            {% if item.done %}
+                <td><s>{{ item.name }}</s></td>
+                {% else %}
+                <td>{{ item.name }}</td>
+                {% endif %}
+        </tr>
+        {% empty %}
+        <tr>
+            <td>You have no tasks to complete</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
